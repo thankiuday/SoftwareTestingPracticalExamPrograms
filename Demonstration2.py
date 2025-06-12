@@ -1,3 +1,8 @@
+'''
+code Explanation:
+
+This program checks a Python file for basic coding standards. It verifies that all functions have docstrings, follow snake_case naming, and that indentation is a multiple of 4 spaces. It helps ensure your code is clean, readable, and follows Python best practices.'''
+
 import ast
 import re
 

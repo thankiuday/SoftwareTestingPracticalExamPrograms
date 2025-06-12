@@ -1,3 +1,9 @@
+'''
+code Explaination:
+
+This program tests the is_even function using a set of predefined input-output pairs. It runs each test, compares the actual result with the expected one, and prints whether the test passed or failed. At the end, it gives a summary of how many tests were successful.
+'''
+
 # Step 1: Define the function to be tested
 def is_even(num):
     return num % 2 == 0

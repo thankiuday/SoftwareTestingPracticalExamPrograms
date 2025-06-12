@@ -1,3 +1,10 @@
+
+'''
+code Explanation:
+
+This program calculates the Cyclomatic Complexity of a Python function, which measures the number of independent paths through the code. It uses Python’s ast module to analyze the code structure and counts decision-making points like if, for, while, try, and logical operators. The final complexity is 1 + number of decision points.'''
+
+
 import ast  
 
 
@@ -5,27 +12,27 @@ class CyclomaticComplexityCounter(ast.NodeVisitor):
     def __init__(self):
         self.decision_points = 0 
 
-    # Visit each 'if' statement
+    # Visit 'if' statement
     def visit_If(self, node):
         self.decision_points += 1  
         self.generic_visit(node)   
 
-    # Visit each 'for' loop
+    # Visit  'for' loop
     def visit_For(self, node):
         self.decision_points += 1  
         self.generic_visit(node)
 
-    # Visit each 'while' loop
+    # Visit  'while' loop
     def visit_While(self, node):
         self.decision_points += 1
         self.generic_visit(node)
 
-    # Visit each 'try-except' block
+    # Visit  'try-except' block
     def visit_Try(self, node):
         self.decision_points += len(node.handlers)  
         self.generic_visit(node)
 
-    # Visit boolean operations like 'and' / 'or' (e.g., if a and b)
+    # Visit boolean operations like 'and' / 'or'
     def visit_BoolOp(self, node):
         self.decision_points += len(node.values) - 1  
         self.generic_visit(node)
